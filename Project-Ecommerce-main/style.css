@@ -1,0 +1,1352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2%;
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Navbar  */
+.nav-items {
+    display: none;
+}
+
+/* Show dropdown when toggled */
+.nav-items.show {
+    display: block;
+}
+
+.logo {
+    font-family: "Whisper", cursive;
+    color: white;
+    font-size: 2.2vw;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+#burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+#burger-menu div {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+
+/* Basic styling for the navbar */
+#navbar {
+    position: relative;
+    left: 9%;
+}
+
+.dropdown-btn {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4vw;
+}
+
+.dropdown-content {
+    display: none;
+    /* Initially hide the dropdown */
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    /* min-width: 160px; */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content ul li a {
+    text-align: center;
+    display: block;
+    font-size: 1.4vw;
+    color: white;
+    padding: 1vw;
+    text-decoration: none;
+
+}
+
+.dropdown-content ul li a:hover {
+    background-color: #444;
+    /* Adds a hover effect for dropdown items */
+}
+
+.hide-dropdown {
+    display: none;
+}
+
+.nav-items.show {
+    display: block;
+}
+
+.Outernav {
+    position: relative;
+    left: 4%;
+}
+
+.Outernav ul {
+    display: flex;
+    list-style: none;
+    gap: 1vw;
+    flex-wrap: nowrap;
+}
+
+.Outernav a {
+    font-size: 1.5vw;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.navbar-icons a {
+    color: white;
+    font-size: 1.5vw;
+    text-decoration: none;
+}
+
+.search {
+    display: flex;
+    position: relative;
+    left: 10%;
+}
+
+.search button {
+    position: relative;
+    left: -4%;
+    width: 2vw;
+    font-size: 1.2vw;
+    color: black;
+    background-color: white;
+    border: none;
+
+}
+
+.search input {
+    padding-left: 2%;
+    font-size: 1.2vw;
+    width: 30vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+}
+
+
+#user-link-navbar {
+    color: white;
+    font-size: 1.4vw;
+    margin-top: 0.3%;
+}
+
+#logout-btn-navbar {
+    cursor: pointer;
+    font-size: 1.4vw;
+}
+
+/*  Cart Secion */
+#cart-count {
+    position: absolute;
+    top: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    padding: 2vw;
+}
+
+#cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-header h2 {
+    font-size: 2vw;
+}
+
+#close-cart {
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+.cart-items {
+    margin-top: 2vw;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    /* Adds a 1px solid black border */
+    padding: 2%;
+    /* Optional: Adds some padding inside the border */
+    border-radius: 1%;
+}
+
+
+.cart-item img {
+    height: 8vh !important;
+    width: 4vw !important;
+}
+
+#cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50%;
+}
+
+#cart-total h3 {
+    text-align: center;
+}
+
+.buy {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.buy button {
+    border: none;
+    cursor: pointer;
+    background-color: #1F316F;
+    color: white;
+    padding: 2%;
+    font-size: 1.4vw;
+}
+
+
+.dltitem {
+    font-size: 1vw;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.3vw;
+    border-radius: 5px;
+}
+
+/* User cart data  */
+.cart-entry {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.cart-entry-image {
+    width: 4vw;
+    height: 8vh;
+    margin-right: 2%;
+}
+
+.cart-entry-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-entry-title {
+    font-size: 1vw;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.cart-entry-quantity {
+    color: black;
+    font-size: 1.1vw;
+    margin-bottom: 1%;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+}
+
+.cart-entry-price {
+    color: black;
+    font-size: 1.1vw;
+    margin-bottom: 1%;
+}
+
+/* user cart quantity */
+
+.cart-entry-quantity-controls {
+    display: flex;
+
+}
+
+.decrease-qty-btn,
+.increase-qty-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.decrease-qty-btn i,
+.increase-qty-btn {
+    border: 2px solid red;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    color: red;
+
+}
+
+/* Services */
+#services {
+    display: flex;
+    align-items: center;
+    padding: 8vh 0;
+}
+
+.icons i {
+    font-size: 2vw;
+    padding-left: 10vw;
+}
+
+.icons i p {
+    padding-left: 3vw;
+    font-size: 1vw;
+}
+
+#exclusive {
+    text-align: center;
+}
+
+#exclusive h4 {
+    font-size: 2vw;
+    padding-bottom: 2%;
+}
+
+.exp {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Exclusive Products */
+
+.product h3 {
+    padding-top: 5%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.product img {
+    width: 15vw;
+    height: 18vw;
+}
+
+.product h4 {
+    padding: 2vw;
+    font-size: 1.2vw !important;
+}
+
+#products h4 {
+    font-size: 2vw;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.category {
+    font-size: 2vw;
+    margin-top: 16vh !important;
+    text-align: center;
+
+}
+
+/* for rating star */
+.star {
+    color: orange;
+}
+
+/* All API Products */
+
+#all-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+
+.addtocartbtn {
+    position: absolute;
+    bottom: 8%;
+    cursor: pointer;
+    /* Position the button 8 pixels from the bottom */
+    transform: translateX(-50%);
+    left: 50%;
+    width: 40%;
+    height: 5vh;
+    padding: 2%;
+    font-size: 1.2vw;
+    background-color: #000000;
+    color: white;
+    /* Adjust font size for consistency */
+}
+
+.product-image img {
+    height: 20%;
+}
+
+.product-details-content button {
+    position: absolute;
+    bottom: 2vh;
+
+}
+
+.product-items {
+    position: relative;
+    flex-basis: 31%;
+    margin-bottom: 5%;
+    height: 52vh;
+    border: 1px solid black;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.product-items:hover {
+    background-color: #808080;
+}
+
+.product-items img {
+    padding: 1vw;
+    width: 50%;
+    height: 25vh;
+}
+
+.product-items a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-items p,
+.product-items h2 {
+    padding: 0.2vw;
+    text-decoration: none;
+    font-size: 1.2vw;
+    color: inherit;
+}
+
+.product-items p a,
+.product-items h2 a {
+    text-decoration: none;
+}
+
+.quantity_increase {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 1vh;
+    /* Adjust spacing between the icons and text */
+}
+
+.quantity_increase i {
+    border: 2px solid red;
+    border-radius: 50%;
+    /* Makes the border circular */
+    width: 24px;
+    /* Adjust the size as needed */
+    height: 24px;
+    /* Adjust the size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    /* Adjust the icon size */
+    color: red;
+    /* Adjust the icon color */
+}
+
+.quantity_increase i:hover {
+    cursor: pointer;
+    /* Makes the icons appear clickable */
+}
+
+
+/* Footer */
+
+#footer {
+    background-color: #222222;
+    width: 100%;
+    height: 40%;
+    /* Set the desired height */
+    display: flex;
+    /* Flexbox helps manage child elements */
+    flex-direction: column;
+
+}
+
+.foot p {
+    color: white;
+    text-align: center;
+    font-family: "Whisper", cursive;
+    font-size: 2vw;
+    padding: 2vh;
+}
+
+.icons2 {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding-top: 2vw;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icons2 i {
+    font-size: 2vw;
+    border: 7px solid orange;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: orange;
+}
+
+.icons2 p {
+    padding: 1vw;
+    color: white;
+    font-size: 1vw;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    gap: 5vw;
+}
+
+.ul {
+
+    font-size: 1.2vw;
+    color: #ccc;
+    padding-bottom: 1vw;
+}
+
+.footer-content li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer-content a {
+    color: #808080;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.sub p {
+    color: white;
+    font-size: 1.2vw;
+    padding-bottom: 2vw;
+    text-align: center;
+}
+
+
+.input-container {
+    position: relative;
+    width: 18vw;
+    /* Adjust the width as needed */
+}
+
+.input-container input {
+    width: 100%;
+    padding-right: 3vw;
+    /* Ensure enough padding on the right for the button */
+    padding-left: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    font-size: 1vw;
+    box-sizing: border-box;
+}
+
+.input-container button {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0 1vw;
+    cursor: pointer;
+}
+
+.input-container button i {
+    font-size: 1.2vw;
+    color: black;
+    padding-top: 1.2vh;
+}
+
+.input-container .sub {
+    display: none;
+}
+
+h6 {
+    color: white;
+    text-align: center;
+    font-size: 0.8vw;
+    padding-top: 1.2vh;
+    padding-bottom: 4vh;
+}
+
+#footer2 {
+    background-color: #262726;
+    height: 15vh;
+}
+
+.for-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw 5%;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons i {
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 1vw;
+    background-color: #262726;
+}
+
+.arrow-up {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    font-size: 1vw;
+    padding: 0.8vw;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid orange;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+
+.copyright {
+    color: #808080;
+    font-size: 0.9vw;
+    padding: 1vw;
+    text-align: center;
+}
+
+
+
+/* Contact Us */
+
+#phone {
+    overflow: hidden;
+}
+
+.contact {
+    z-index: 1;
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    background-color: #112d42;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background: #03a9f4;
+}
+
+.container {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+}
+
+.contactinfo {
+    position: absolute;
+    top: 7vw;
+    width: 25vw;
+    height: 50vh;
+    margin-left: 165px;
+    height: calc(70% - 80px);
+    background: #0f3959;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contactinfo h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.info {
+    position: relative;
+    list-style: none;
+}
+
+.info li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.info li span {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.contact .container .contactinfo .info li span:nth-child(1) {
+    width: 30px;
+    min-width: 30px;
+}
+
+.contact .container .contactinfo .info li span:nth-child(1) img {
+    max-width: 100%;
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+.contact .container .contactinfo .info li span:nth-child(2) {
+    color: white;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.contact .container .contactinfo .info li:hover span:nth-child(1) img,
+.contact .container .contactinfo .info li:hover span:nth-child(2) {
+    opacity: 1;
+}
+
+.contactForm2 {
+    position: absolute;
+    padding: 68px 82px;
+    background: white;
+    margin-left: 335px;
+    top: 5vh;
+    padding-left: 250px;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.contactForm2 h2 {
+    color: #0f3959;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contactForm2 .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    padding-top: 30px;
+}
+
+.contactForm2 .formBox .inputBox {
+    position: 0 0 35px 0;
+    padding-top: 5px;
+}
+
+.contactForm2 .formBox .inputBox.w50 {
+    width: 47%;
+}
+
+.contact .container .contactForm2 .formBox .inputBox.w100 {
+    width: 100%;
+}
+
+.contact .container .contactForm2 .formBox .inputBox input,
+.contact .container .contactForm2 .formBox .inputBox textarea {
+    width: 100% !important;
+    padding: 5px 0;
+    resize: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+}
+
+.contact .container .contactForm2 .formBox .inputBox textarea {
+    min-height: 70px;
+}
+
+.contact .container .contactForm2 .formBox .inputBox span {
+    position: relative;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+    color: #333;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.contact .container .contactForm2 .formBox .inputBox input:focus~span,
+.contact .container .contactForm2 .formBox .inputBox textarea:focus~span,
+.contact .container .contactForm2 .formBox .inputBox input:valid~span,
+.contact .container .contactForm2 .formBox .inputBox textarea:valid~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
+}
+
+.contact .container .contactForm2 .formBox .inputBox input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: white;
+    border: none;
+    max-width: 100px;
+    padding: 10px;
+    margin-top: 8%;
+}
+
+.contact .container .contactForm2 .formBox .inputBox input[type="submit"]:hover {
+    background: #ff568c;
+}
+
+/* Single Product */
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.product-details img {
+    border: 2px solid black;
+    padding: 5%;
+    border-radius: 1px;
+    width: 40vw;
+    height: 90vh;
+    transform: scale(0.5);
+}
+
+.star {
+    color: orange;
+}
+
+.product-details h2 {
+    position: relative;
+    top: -15vh !important;
+    font-size: 1.5vw;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.product-details p {
+    text-align: center;
+    position: relative;
+    top: -12vh !important;
+    padding: 0 5vw;
+    font-size: 1.2vw;
+    padding-bottom: 1vw;
+}
+
+.product-details button {
+    position: relative;
+    top: -10vh;
+    left: 5.5vw;
+    width: auto;
+    height: 8vh;
+    font-size: 1.5vw;
+    padding: 0 2%;
+}
+
+.star {
+    color: orange;
+}
+
+#cart-total h3 {
+    font-size: 2vw;
+}
+
+/* Contact Us */
+
+.contact .container .contactinfo {
+    position: relative;
+    top: 18vh;
+    width: 350px;
+    margin-left: 165px;
+    height: 60%;
+    background: #0f3959;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact .container .contactinfo h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact .container .contactinfo .info {
+    position: relative;
+    list-style: none;
+}
+
+.contact .container .contactinfo .info li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.contact .container .contactinfo .info li span {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.contact .container .contactinfo .info li span:nth-child(1) {
+    width: 30px;
+    min-width: 30px;
+}
+
+.contact .container .contactinfo .info li span:nth-child(1) img {
+    max-width: 100%;
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+.contact .container .contactinfo .info li span:nth-child(2) {
+    color: white;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.contact .container .contactinfo .info li:hover span:nth-child(1) img,
+.contact .container .contactinfo .info li:hover span:nth-child(2) {
+    opacity: 1;
+}
+
+.contact .container .contactinfo .social {
+    position: relative;
+    display: flex;
+}
+
+.contact .container .contactinfo .social li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.contact .container .contactinfo .social li a {
+    text-decoration: none;
+}
+
+.contact .container .contactinfo .social li a img {
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+.contact .container .contactinfo .social li:hover a img {
+    opacity: 1;
+}
+
+.contactForm {
+    position: absolute;
+    padding: 68px 82px;
+    background: white;
+    margin-left: 335px;
+    top: 10%;
+    padding-left: 25%;
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.contactForm h2 {
+    color: #0f3959;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contactForm .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    padding-top: 30px;
+}
+
+.contact .container .contactForm .formBox .inputBox {
+    position: 0 0 35px 0;
+    padding-top: 5px;
+}
+
+.contact .container .contactForm .formBox .inputBox.w50 {
+    width: 47%;
+}
+
+.contact .container .contactForm .formBox .inputBox.w100 {
+    width: 100%;
+}
+
+.contact .container .contactForm .formBox .inputBox input,
+.contact .container .contactForm .formBox .inputBox textarea {
+    width: 100% !important;
+    padding: 5px 0;
+    resize: none;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+}
+
+.inputBox textarea {
+    min-height: 70px;
+}
+
+.inputBox span {
+    position: relative;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Ubuntu', sans-serif;
+    color: #333;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.contact .container .contactForm .formBox .inputBox input:focus~span,
+.contact .container .contactForm .formBox .inputBox textarea:focus~span,
+.contact .container .contactForm .formBox .inputBox input:valid~span,
+.contact .container .contactForm .formBox .inputBox textarea:valid~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
+}
+
+.inputBox input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: white;
+    border: none;
+    width: 50vw;
+    padding: 10px;
+}
+
+/* Carousel */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    padding-top: 4%;
+    width: 100%;
+    height: 95vh;
+    vertical-align: middle;
+}
+
+.slideshow-container {
+    /* max-width: 100%; */
+    height: 80vh;
+    position: relative;
+}
+
+/* Checkout */
+
+#checkout {
+    overflow: hidden;
+}
+
+#checkout h1 {
+    margin-top: 12vh;
+    font-size: 5vw;
+    justify-content: center;
+    text-align: center;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* Cart section */
+.cart-section {
+    flex: 2;
+    /* Take 2/3 of the space */
+}
+
+.cart-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-section .topics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topics {
+    margin-right: 12%;
+    padding-left: 2%;
+    font-size: 1.5vw;
+
+}
+
+#cart-products img {
+    width: 5vw !important;
+    height: 10vh !important;
+}
+
+#cart-products li {
+    margin-top: 2%;
+}
+
+#cart-products p {
+    margin-left: 32%;
+    font-size: 1.2vw;
+    width: 100%;
+    font-weight: 500;
+}
+
+/* Right  */
+/* Total price styling */
+.total-price {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Address section */
+.personal-info {
+    padding: 2%;
+
+}
+
+.personal-info input {
+    width: 100%;
+    height: 5vh;
+    margin-top: 2%;
+    font-size: 1vw;
+}
+
+.address-section {
+    background: url("./img/color.jpg");
+    padding: 20px;
+    width: 35vw;
+    height: 80vh;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-address label {
+    color: white;
+    font-size: 1.2vw;
+}
+
+
+.address-section h4 {
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+}
+
+.address-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#address-list {
+    margin-bottom: 15px;
+}
+
+#address-list div {
+    margin-bottom: 10px;
+}
+
+#address-list input[type="radio"] {
+    margin-right: 2%;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5%;
+}
+
+#address-list input[type="text"] {
+    font-size: 1vw;
+    height: 5vh;
+    width: 60%;
+    margin-left: 5px;
+}
+
+/* Add address button */
+#add-address {
+    font-size: 1.1vw;
+    height: 6vh;
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-address:hover {
+    background-color: #4cae4c;
+}
+
+/* Delete address button */
+#delicon {
+    display: none;
+}
+
+.delete-address {
+    padding: 2%;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+.delete-address:hover {
+    background-color: #c9302c;
+}
+
+/* Place Order button */
+#place-order {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #0275d8;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 22%;
+}
+
+
+#place-order:hover {
+    background-color: #025aa5;
+}

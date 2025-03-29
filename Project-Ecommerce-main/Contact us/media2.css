@@ -1,0 +1,216 @@
+   @media screen and (max-width: 600px) {
+
+       .search {
+           display: none;
+       }
+
+       .Outernav {
+           display: none;
+       }
+
+       .dropdown-btn {
+           display: none;
+       }
+
+       .logo a {
+           font-size: 6vw;
+       }
+
+
+       .hide-dropdown {
+           display: block;
+       }
+
+       .nav-items.show {
+           display: none;
+       }
+
+       #burger-menu {
+           position: relative;
+           left: 41vw;
+           display: flex;
+       }
+
+       #user-link {
+           color: white;
+           text-align: center;
+           font-size: 5vw;
+       }
+
+       #navbar.active .nav-items {
+           right: 0;
+       }
+
+       .navbar-icons a {
+           position: relative;
+           left: -12vw;
+           font-size: 5vw;
+           padding: 2vw;
+       }
+
+       .nav-items {
+           position: fixed;
+           top: 6%;
+           right: -100%;
+           height: 100vh;
+           width: 80%;
+           background-color: rgba(0, 0, 0, 0.8);
+           backdrop-filter: blur(10px);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           transition: right 0.3s ease-in-out;
+
+       }
+
+       .nav-items ul li a {
+           gap: 5%;
+           font-size: 5vw;
+           /* Larger font size for smaller screens */
+       }
+
+       .nav-items ul li {
+           margin-bottom: 5vh;
+       }
+
+       #cart-count {
+           position: relative;
+           top: -2vh;
+           left: 1vw;
+       }
+
+
+       /* Contact Us */
+
+       .contact::before {
+           height: 100%;
+       }
+
+       .contactinfo {
+           margin-top: -15%;
+           left: -12%;
+
+       }
+
+       .contact {
+           height: 130vh !important;
+       }
+
+       .contactForm2 {
+
+           width: 90vw !important;
+           height: 65vh;
+           margin-top: 18%;
+           margin-left: 5vw;
+       }
+
+       .contactForm2 h2 {
+           font-size: 5vw;
+           width: 100vw;
+           position: relative;
+           left: -55vw;
+       }
+
+       .formBox {
+           position: relative;
+           left: -55vw;
+           height: 5vh;
+           width: 50vw;
+       }
+
+       .formBox span {
+           font-size: 3vw !important;
+       }
+
+       /* Footer  */
+       #footer {
+           margin-top: 0;
+           /* Remove the negative margin */
+           position: relative;
+           /* Ensure the footer is relative to other content */
+           padding-bottom: 10vh;
+           /* Add padding to ensure content pushes the footer down */
+       }
+
+       .foot p {
+           font-size: 5vw;
+       }
+
+       .icon-item i {
+           font-size: 4vw;
+       }
+
+       .icon-item p {
+           font-size: 2vw;
+       }
+
+       .footer-content p {
+           padding-top: 4vh;
+           font-size: 3vw;
+       }
+
+       .footer-content a {
+           font-size: 2.5vw;
+       }
+
+       .sub p {
+           padding-left: 6vw;
+       }
+
+       .input-container input {
+           font-size: 3vw;
+           width: 25vw;
+       }
+
+       .input-container button i {
+           display: none;
+       }
+
+       .input-container .sub {
+           display: block;
+           position: relative;
+           top: 2.5vh;
+           left: 4vw;
+           border: 2px solid white;
+           color: white;
+
+       }
+
+       h6 {
+           display: none;
+       }
+
+       #footer2 {
+           height: auto;
+       }
+
+       .for-social {
+           padding-top: 5%;
+       }
+
+       .arrow-up {
+           font-size: 3vw;
+           padding: 2%;
+       }
+
+       .social-icons i {
+           width: 6vw;
+           height: 4vh;
+           padding: 1vw;
+           font-size: 4vw;
+           color: white;
+           border-radius: 50%;
+           justify-content: center;
+           display: flex;
+           align-items: center;
+       }
+
+       .copyright {
+           font-size: 2.5vw;
+       }
+
+
+
+
+   }
